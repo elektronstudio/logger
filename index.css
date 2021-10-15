@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: monospace;
+}
+textarea {
+  border: none;
+  width: 100vw;
+  height: 100vh;
+  outline: none;
+  resize: none;
+  padding: 32px;
+}
+button,
+pre {
+  margin: 32px;
+  display: block;
+}
