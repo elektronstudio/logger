@@ -16,6 +16,10 @@ const renderTable = (messages) => {
   return [header.join("\t"), rows].join("\n");
 };
 
+const renderJSON = (messages) => {
+  return JSON.stringify(messages, null, 2);
+};
+
 let messages = [];
 let filteredMessages = [];
 
@@ -42,6 +46,7 @@ socket.addEventListener("message", ({ data }) => {
   });
 
   document.getElementById("log").innerHTML = renderTable(filteredMessages);
+  document.getElementById("log2").innerHTML = renderJSON(filteredMessages);
   //}
 });
 
