@@ -23,6 +23,13 @@ const renderJSON = (messages) => {
 let messages = [];
 let filteredMessages = [];
 
+let lastCount = 0;
+setInterval(() => {
+  const count = messages.length - lastCount;
+  document.getElementById("count").innerHTML = `Messages per second: ${count} `;
+  lastCount = messages.length;
+}, 1000);
+
 socket.addEventListener("message", ({ data }) => {
   const message = safeJsonParse(data);
   messages.push(message);
@@ -65,3 +72,5 @@ const safeJsonParse = (str) => {
     return null;
   }
 };
+
+const app = createApp({});
